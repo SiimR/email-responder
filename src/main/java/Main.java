@@ -10,11 +10,17 @@ public class Main {
     public static void main(String[] args) {
         if (args.length == 2) {
             System.out.println("Arguments from command line!");
+            System.out.println();
+            System.out.println("Original Email: \n" + args[1] + "\n");
+            System.out.println("Response Email:");
             System.out.println(emailHandler(args[0], args[1]));
         } else {
             TestEmails testEmails = new TestEmails();
             for (String sender: testEmails.getTestMails().keySet()) {
                 String text = testEmails.getTestMails().get(sender);
+                System.out.println("-------------------------------------------------------");
+                System.out.println("Original Email: \n" + text + "\n");
+                System.out.println("Response Email:");
                 System.out.println(emailHandler(sender, text));
             }
         }
